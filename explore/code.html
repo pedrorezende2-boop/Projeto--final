@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>frenchy - Search &amp; Explore</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#3a374a",
+                    "surface-variant": "#353245",
+                    "secondary-container": "#273ca0",
+                    "on-error": "#690005",
+                    "background": "#141122",
+                    "outline-variant": "#454556",
+                    "surface-tint": "#c0c1ff",
+                    "inverse-on-surface": "#312e40",
+                    "tertiary-fixed": "#ffdbd2",
+                    "primary-fixed": "#e1e0ff",
+                    "on-secondary": "#04228a",
+                    "tertiary": "#ffb4a1",
+                    "on-tertiary-fixed": "#3c0800",
+                    "on-secondary-fixed": "#001159",
+                    "on-surface": "#e5dff8",
+                    "tertiary-fixed-dim": "#ffb4a1",
+                    "text-secondary": "#9CA3AF",
+                    "on-tertiary": "#611300",
+                    "secondary-fixed": "#dee1ff",
+                    "on-background": "#e5dff8",
+                    "on-primary": "#0c00aa",
+                    "inverse-surface": "#e5dff8",
+                    "error": "#ffb4ab",
+                    "inverse-primary": "#3f42f1",
+                    "on-primary-fixed-variant": "#201cdb",
+                    "surface": "#141122",
+                    "on-tertiary-fixed-variant": "#891f00",
+                    "on-primary-container": "#bdbfff",
+                    "error-container": "#93000a",
+                    "on-primary-fixed": "#04006d",
+                    "primary": "#c0c1ff",
+                    "surface-container-high": "#2a283a",
+                    "on-surface-variant": "#c6c4d9",
+                    "primary-container": "#2f2fe4",
+                    "on-secondary-fixed-variant": "#273ca0",
+                    "surface-container": "#201d2f",
+                    "text-primary": "#FFFFFF",
+                    "on-tertiary-container": "#ffb19d",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "on-secondary-container": "#a3b0ff",
+                    "secondary": "#bac3ff",
+                    "surface-dim": "#141122",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#bac3ff",
+                    "surface-elevated": "#1A1953",
+                    "tertiary-container": "#9b2400",
+                    "surface-container-lowest": "#0e0c1d",
+                    "border-subtle": "#2F2FE433",
+                    "surface-container-highest": "#353245",
+                    "outline": "#908fa2",
+                    "surface-container-low": "#1c192b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "0.25rem",
+                    "stack-lg": "1rem",
+                    "margin-mobile": "1rem",
+                    "stack-md": "0.5rem",
+                    "gutter-mobile": "0.75rem",
+                    "feed-gap": "1px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-lg": ["15px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["11px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #141122; color: #e5dff8; -webkit-tap-highlight-color: transparent; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-header { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-white">
+<!-- Top AppBar (JSON Source) -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant dark:border-outline-variant flex justify-between items-center px-margin-mobile h-14 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden active:opacity-80 transition-all cursor-pointer">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a young man with sharp features and a stylish haircut. He is set against a dark, moody background with subtle blue rim lighting that complements the high-contrast, tech-focused aesthetic of the UI. The photography is clean, sharp, and uses high-end cinematic lighting typical of modern social media profiles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp7pvkmiqNyKvZZwX9-GXHumzPyiaF700yl-RKmn26U-0OX-6KxXIu66cWVsAx5iXsO3Tn23_RUI7-ASzk2WsHSdwTa8V7B31lmwMGfj_5SO7Z55oYjebSRG79gBWoUxpTiaBvad2BTDEqOv3vE6ndqRIaC1O3oA-48ol3quoWWbD6FsYduG0e3NjxIR9nDiQvPMCH43IMSTkXu50pH-9zZiSUYV8Du24L3uNmd5xSB24R1W92GVKkQIrhBQ7BVPq4EVSkVmlNTt5C"/>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-black text-primary dark:text-primary tracking-tighter">frenchy</h1>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-primary hover:bg-surface-container dark:hover:bg-surface-container transition-colors p-2 rounded-full active:opacity-80 transition-all">
+            settings
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-14 pb-20 max-w-2xl mx-auto min-h-screen">
+<!-- Search Bar Section -->
+<div class="px-margin-mobile py-stack-lg sticky top-14 bg-background/95 z-40">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container border-none rounded-full py-3 pl-12 pr-4 text-on-surface focus:ring-1 focus:ring-primary transition-all placeholder:text-on-surface-variant" placeholder="Search frenchy" type="text"/>
+</div>
+</div>
+<!-- Featured / Live Section (Bento Style) -->
+<section class="px-margin-mobile mb-8">
+<div class="relative h-48 rounded-xl overflow-hidden mb-4 group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An ultra-modern, high-tech workspace featuring multiple glowing monitors displaying complex code and data visualizations. The room is dark, illuminated primarily by the vibrant neon blue and purple light from the screens. The aesthetic is clean, minimalist, and perfectly aligned with a futuristic microblogging platform for tech enthusiasts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0hOpapolhcGq-L-BgOix12IhQ9jOJ-29RMPxfko5EHpcBahK8IoOhJ6_uwKy_VAucbNaM1S1c_fEWbUBRTjhjReF1-HrDl23rGDYpPYrjswXV8WfGnfXq6-kB-0hBV23J1AbXmYD44DzuyVNgJqwBJNPAaUPXlczIGCxRimrUebwZCEBO3gHB0JhPtXJxq7a-ZbO1k_GxUwJy-70KinawRNU0iQRQBFgLWMtlUsc3yK62TEh_NBba_9dqbpwIQR8QC9zPDMTJEToK"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-90"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="font-label-sm text-primary uppercase tracking-widest mb-1">Live Now</p>
+<h2 class="font-headline-md text-headline-md text-white">The Future of AI Micro-Architectures</h2>
+</div>
+</div>
+</section>
+<!-- Trends Section -->
+<section class="border-t border-subtle">
+<div class="px-margin-mobile py-4 flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-white">Trends for you</h3>
+<button class="material-symbols-outlined text-primary">more_horiz</button>
+</div>
+<div class="flex flex-col">
+<!-- Trend Item 1 -->
+<div class="px-margin-mobile py-stack-lg hover:bg-surface-container transition-colors cursor-pointer border-b border-subtle">
+<p class="font-label-sm text-on-surface-variant mb-0.5">Technology · Trending</p>
+<p class="font-label-lg text-label-lg text-white mb-0.5">#QuantumComputing</p>
+<p class="font-label-sm text-on-surface-variant">42.5K Posts</p>
+</div>
+<!-- Trend Item 2 -->
+<div class="px-margin-mobile py-stack-lg hover:bg-surface-container transition-colors cursor-pointer border-b border-subtle">
+<p class="font-label-sm text-on-surface-variant mb-0.5">Sports · Trending</p>
+<p class="font-label-lg text-label-lg text-white mb-0.5">#ChampionshipSunday</p>
+<p class="font-label-sm text-on-surface-variant">128K Posts</p>
+</div>
+<!-- Trend Item 3 -->
+<div class="px-margin-mobile py-stack-lg hover:bg-surface-container transition-colors cursor-pointer border-b border-subtle">
+<p class="font-label-sm text-on-surface-variant mb-0.5">Politics · Trending</p>
+<p class="font-label-lg text-label-lg text-white mb-0.5">Global Summit 2024</p>
+<p class="font-label-sm text-on-surface-variant">Trending with <span class="text-primary">#WorldFuture</span></p>
+</div>
+</div>
+<button class="px-margin-mobile py-4 text-primary font-label-md hover:bg-surface-container w-full text-left transition-colors">Show more</button>
+</section>
+<!-- Who to Follow -->
+<section class="mt-4 border-t border-subtle bg-surface-container-lowest py-2">
+<h3 class="px-margin-mobile py-4 font-headline-md text-headline-md text-white">Who to follow</h3>
+<div class="flex flex-col">
+<!-- Follow Item 1 -->
+<div class="px-margin-mobile py-stack-lg flex items-center gap-3 hover:bg-surface-container transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A portrait of a creative professional with glasses and a friendly expression. The lighting is soft and warm, contrasting with a dark navy background. The image has a professional yet approachable feel, suitable for a thought leader on a high-end social networking platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG4q6OjqHN1aqaZcEmn-zNN6U2hNzd9g94aANp0K3g-2JgTn-NxaNpJ7ZpvrMHu5CkD7RZhNe1SwCNK5aNvNOleQk7qwXfIHSVf7pEEoUWGrmEzdCTuPTpS65NIUG7f1V7YZEU-gZralFHP68Ie53gxIprCbW5_1soHOaVMsuhZa6HAPg7hQlf377Xiuic8GM3y67JbNTMe6LTAiRz6giVg48zlqFKSFHVbPfBdDJvPYCP2akiTtRVXfczuLdMlGRqENtLOxsAhy7O"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1">
+<p class="font-label-lg text-label-lg text-white truncate">Julian Vane</p>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-label-sm text-on-surface-variant truncate">@jv_design</p>
+</div>
+<button class="bg-white text-background font-label-md px-5 py-1.5 rounded-full hover:bg-on-surface transition-colors active:scale-95">Follow</button>
+</div>
+<!-- Follow Item 2 -->
+<div class="px-margin-mobile py-stack-lg flex items-center gap-3 hover:bg-surface-container transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A vibrant portrait of a young woman with a colorful, modern aesthetic. Her hair is styled in a contemporary way, and she wears high-fashion streetwear. The background is a deep, saturated purple that fits perfectly within the dark-mode neon palette of the app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEile7fLb3GJrzumspoXg6yv6_g341-Px8RN9uVd8KJ0XocPtY6jFJ66HT61CDlObfgH8NJbIivKrMPQ7ewU7j-ONhr0ZokDV4B3BkNyP4m6zV2j293gwcNTZPLgOhRnslYkOzcBkHDuH5jJyJhfKuPzTX9YdEntVprH2PNj-WyWzEl5CPYeZDCl98PVPHdSo14IK-CnOeLHhZTh4Phte6q-4txBVSldqoGgRLc7hqYR-o9A4QRkKS0H37oLyjqbulCRPOOLpjrKlH"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1">
+<p class="font-label-lg text-label-lg text-white truncate">Elena Rossi</p>
+</div>
+<p class="font-label-sm text-on-surface-variant truncate">@elena_ai</p>
+</div>
+<button class="bg-white text-background font-label-md px-5 py-1.5 rounded-full hover:bg-on-surface transition-colors active:scale-95">Follow</button>
+</div>
+</div>
+<button class="px-margin-mobile py-4 text-primary font-label-md hover:bg-surface-container w-full text-left transition-colors">Show more</button>
+</section>
+</main>
+<!-- Bottom Navigation (JSON Source) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-background/95 backdrop-blur-sm px-4 pb-safe border-t border-outline-variant dark:border-outline-variant z-50">
+<button class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant transition-transform duration-150 active:scale-90">
+<span class="material-symbols-outlined">home</span>
+</button>
+<!-- ACTIVE TAB: Search/Explore -->
+<button class="flex flex-col items-center justify-center w-full h-full text-primary scale-110 transition-transform duration-150 active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant transition-transform duration-150 active:scale-90">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant transition-transform duration-150 active:scale-90">
+<span class="material-symbols-outlined">person</span>
+</button>
+</nav>
+<!-- FAB (Suppressed on Explore as per mandate, but included script logic for potential context) -->
+<script>
+        // Micro-interaction for trend items
+        document.querySelectorAll('.trend-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.style.backgroundColor = 'rgba(47, 47, 228, 0.1)';
+                setTimeout(() => {
+                    item.style.backgroundColor = '';
+                }, 200);
+            });
+        });
+
+        // Search focus interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        const searchContainer = searchInput.parentElement;
+        searchInput.addEventListener('focus', () => {
+            searchContainer.classList.add('ring-2', 'ring-primary/50');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchContainer.classList.remove('ring-2', 'ring-primary/50');
+        });
+    </script>
+</body></html>
